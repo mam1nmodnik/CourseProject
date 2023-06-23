@@ -11,7 +11,7 @@
   
 
 
-    <title>Одежда</title>
+    <title>Одежд</title>
 </head>
 <body>
     <div class="preloader">
