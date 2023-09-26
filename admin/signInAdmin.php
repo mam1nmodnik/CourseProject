@@ -27,40 +27,36 @@
             include('headerAdminPanel.php');
         ?>
 
-<div class="alight_center">
-    <form>
-      <h2>Авторизация</h2>
-      <div class="box div-relativ">
-        <label for="login-username">E-mail:</label>
-        <input type="text" id="email" name="email" placeholder="Введите E-mail" required class="input inputs">
-      </div>
-      <div class="box div-relativ">
-        <label for="login-password">Пароль:</label>
-        <input type="password" id="password" name="password" placeholder="*********" required class="input inputs">
-      </div>
-      <div class="checkbox_flex">
-        <input type="checkbox" name="" id="checkbox" class="checkbox">
-        <label for="checkbox">Запомнить меня</label>
-      </div>
-      <!-- <div class="password-toggle">
-        <input type="password" id="password">
-        <label for="password" onclick="togglePasswordVisibility()">
-          <i class="fa fa-eye"></i>
-        </label>
-      </div> -->
-      <button id="adminPanel-button">Войти</button>
-          <div class="div-response">
-            <div class="box-response">        
-              
+  <div class="alight_center">
+      <form>
+        <h2>Авторизация</h2>
+        <div class="box div-relativ">
+          <label for="login-username">E-mail:</label>
+          <input type="text" id="email" name="email" placeholder="Введите E-mail" required class="input inputs">
+        </div>
+        <div class="box div-relativ">
+          <label for="login-password">Пароль:</label>
+          <input type="password" id="password" name="password" placeholder="*********" required class="input inputs">
+        </div>
+        <div class="checkbox_flex">
+          <input type="checkbox" name="" id="checkbox" class="checkbox">
+          <label for="checkbox">Запомнить меня</label>
+        </div>
+        <!-- <div class="password-toggle">
+          <input type="password" id="password">
+          <label for="password" onclick="togglePasswordVisibility()">
+            <i class="fa fa-eye"></i>
+          </label>
+        </div> -->
+        <button id="adminPanel-button">Войти</button>
+            <div class="div-response">
+              <div class="box-response">        
+                
+              </div>
             </div>
-          </div>
-    </form>
- 
-</div>
-    
-
+      </form>
+  
+  </div>
 <script type="text/javascript" src="js/adminJs.js"></script>
-
-
 </body>
 </html>

@@ -27,31 +27,32 @@
                     <div>
                         <form id="volunteerUniform" name="volunteerUniform" enctype="multipart/form-data"> 
                             <div style="margin-bottom: 25px;" class="box div-relativ">
-                                <label for=""><h4 class="label_h4">Имя</h4></label>
+                            
+                                <label for="name_user"><h4 class="label_h4">Имя</h4></label>
                                 <input class="input-area_input input inputs" type="text" name="name_user" id="name_user">
                             </div>
                             <div style="margin-bottom: 25px;" class="box div-relativ">
-                                <label for=""><h4 class="label_h4">Фамилия</h4></label>
+                                <label for="familiya_user"><h4 class="label_h4">Фамилия</h4></label>
                                 <input class="input-area_input input inputs" type="text" name="familiya_user" id="familiya_user">
                             </div>
                             <div style="margin-bottom: 25px;" class="box div-relativ"> 
-                                <label for=""><h4 class="label_h4">Отчество</h4></label>
+                                <label for="otchestvo_user"><h4 class="label_h4">Отчество</h4></label>
                                 <input  class="input-area_input input inputs" type="text" name="otchestvo_user" id="otchestvo_user">
                             </div>
                             <div style="margin-bottom: 25px;" class="box div-relativ"> 
-                                <label for=""><h4 class="label_h4">Возраст</h4></label>
+                                <label for="age_user"><h4 class="label_h4">Возраст</h4></label>
                                 <input  class="input-area_input input inputs" type="text" name="age_user" id="age_user">
                             </div>
                             <div class="box div-relativ" style="margin-bottom: 25px;">
-                                <label  for=""><h4 class="label_h4">Email добровольца</h4></label>
+                                <label  for="email_user"><h4 class="label_h4">Email добровольца</h4></label>
                                 <input  class="input-area_input input inputs" type="text" name="email_user" id="email_user">
                             </div>
                             <div class="checkbox_label " >
-                                <input class="input" type="checkbox" name="" id="newMailEntry-checkbox" onclick="additionPhoto()">
+                                <input class="input" type="checkbox" name="checkbox" id="newMailEntry-checkbox" onclick="additionPhoto()">
                                 <label  for="checkbox">Прикрепите фото</label>
                             </div>
                             <div class="addition-Photo" id="fileDive">
-                                <input type="file" name="photo_user" id="photo" class="inputs">
+                                <input type="file" name="photo_user" id="photo_user" class="inputs">
                             </div>
                             <div>
                                 <button class="button_form" id="volunteerUniform-button"><h4>Отправить</h4></button>

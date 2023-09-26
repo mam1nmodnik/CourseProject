@@ -1,7 +1,3 @@
-
-
-
-
 $(document).ready(function() {
     $('#adminPanel-button').click(function(e) {
       e.preventDefault();
@@ -48,16 +44,11 @@ $(document).ready(function() {
               let newControl = input.cloneNode( true )
               input.replaceWith(newControl);
             }
-           
-
-          });
-             
+          });    
           if (Object.keys(errors).length > 0) {
             return false;
           };
-
         console.log('ура, все прошло');
-
           var formData = new FormData($(form)[0]);
           console.log(formData)
             $.ajax({
@@ -67,8 +58,6 @@ $(document).ready(function() {
              processData: false,
              contentType: false,
             success: function(response) {
-                
-                //console.log(response);
                 div = document.querySelector('.box-response')
                 let resp =  JSON.parse(response);
                if(resp.status){
@@ -81,20 +70,169 @@ $(document).ready(function() {
                         div.closest('.box-response').insertAdjacentHTML('beforeend', message);
                     }  
                 }
-               
              },
             error: function(jqXHR, status, error) {
                 console.log(status + ': ' + error);
 
              }
            });
-         
-           // валидация формы
-          
     });
+});
+
+
+
+
+
+
+$(document).ready(function() { 
+  const navLinks = [
+    {name: 'Обзор', link: 'indexAdminPanel.php'},
+    {name: 'Поиски', link: '#'},
+    
+  ];  
+  document.getElementById('button-img').addEventListener('click', function() {  
+    const imgRotate = document.getElementById('button-img');
+    const ul = document.querySelector('.nav-links'); 
+      if (ul.children.length > 0) {
+        ul.innerHTML = '';
+        imgRotate.style.transform = "rotate(180deg)";
+      }else{
+        imgRotate.style.transform = "rotate(0deg)";
+        for(let kay of navLinks){
+          let navLinksMessage = `<li><a href="${kay.link}">${kay.name}</a></li>`
+          ul.innerHTML += navLinksMessage;
+        }
+      }
+    });
+});
+
+
+
+
+
+
+
+$(document).ready(function() {
+  // Функция для проверки значения в базе данных
+        let div = document.querySelector('.new-user-container');
+      $.ajax({
+          url: '../vendor/notificationsAdminPanel.php',
+          type: 'GET',
+          datatype: 'json',
+          success: function(response) {  
+            //console.log(response.length);
+              div.innerHTML = ' ';
+              const currentTimestamp = Math.floor(Date.now() / 1000);
+                      let diffInMilliseconds = [],
+                    inner = ``;
+                  for (let kay of response) {
+                    let time = currentTimestamp - kay.currentTime;      
+                    if (time > 300) {
+                      diffInMilliseconds.push(1);
+                    }else{
+                      inner += `
+                      <div class="new-user-container-flex" data - id="${kay.volunteerUniform_id}" >
+                      ${kay.photo_user ?`<img src="../../${kay.photo_user}" alt="" class="img-container">` : ''}
+                        <div class="container-flex1">
+                        <div class="container-flex">
+                          <h2>Новый доброволец ${kay.name_user}</h2>
+                          <img src="${kay.notification}" alt="">
+                        </div>
+                        <p>${kay.time} ${kay.date}</p>
+                        </div>
+                      </div>
+                      `
+                    } // находим кол-во тех, которые больше 5 минут
+                  }
+                    if (diffInMilliseconds.length === response.length) {
+                        inner = `
+                          <div class="no-notifications">
+                          <h2>Нет новых уведомлений</h2>
+                            </div>
+                        `
+                      }
+                    div.innerHTML = inner;
+
+            //   for(let kay of response){           
+            //    // Вычисление разницы между текущей меткой и вашей меткой в секундах
+            //     //console.log(diffInMilliseconds)
+            //     let hui = currentTimestamp - kay.currentTime; 
+            //    if(hui > 300){
+            //         div.innerHTML = `
+            //           <div class="no-notifications">
+            //             <h2>Нет новых уведомлений</h2>
+            //           </div>
+            //           `
+            //         }else{
+            //           div.innerHTML += kay.photo_user ? `
+            //           <div class="new-user-container-flex" data-id="${kay.volunteerUniform_id}">
+            //           <img src="../../${kay.photo_user}" alt="" class="img-container">
+            //           <div class="container-flex1" >
+            //             <div class="container-flex">
+            //               <h2>Новый доброволец ${kay.name_user}</h2>
+            //                   <img src="${kay.notification}" alt="">
+            //             </div>
+            //             <p>${kay.time} ${kay.date}</p>
+            //           </div>
+            //         </div>`: `
+            //         <div class="new-user-container-flex" data-id="${kay.volunteerUniform_id}">
+            //         <div class="container-flex1" >
+            //           <div class="container-flex">
+            //             <h2>Новый доброволец ${kay.name_user}</h2>
+            //                   <img src="${kay.notification}" alt="">
+            //           </div>
+            //           <p>${kay.time} ${kay.date}</p>
+            //         </div>
+            //       </div>`
+
+            //   } 
+            // }               
+          }
+      });
+});
+
+
+setInterval(function() {
+  let div = document.querySelector('.new-user-container');
+  $.ajax({
+      url: '../vendor/notificationsAdminPanel.php',
+      type: 'GET',
+      datatype: 'json',
+      success: function(response) {  
+        //console.log(response.length);
+        div.innerHTML = ' ';
+        const currentTimestamp = Math.floor(Date.now() / 1000);
+                let diffInMilliseconds = [],
+              inner = ``;
+            for (let kay of response) {
+              let hui = currentTimestamp - kay.currentTime;     
+              if (hui > 300) {
+                diffInMilliseconds.push(1);
+              }else{
+                inner += `
+                <div class="new-user-container-flex" data - id="${kay.volunteerUniform_id}" >
+                ${kay.photo_user ?`<img src="../../${kay.photo_user}" alt="" class="img-container">` : ''}
+                  <div class="container-flex1" >
+                  <div class="container-flex">
+                    <h2>Новый доброволец ${kay.name_user}</h2>
+                    <img src="${kay.notification}" alt="">
+                  </div>
+                  <p>${kay.time} ${kay.date}</p>
+                  </div>
+                </div>
+                `
+              } // находим кол-во тех, которые больше 5 минут
+            }
+              if(diffInMilliseconds.length === response.length){
+                  inner = `
+                    <div class="no-notifications">
+                      <h2> Нет новых уведомлений</h2>
+                    </div>
+                  `
+                  }
+              div.innerHTML = inner;
+      }
   });
 
-
-
-
-
+  
+}, 60000);

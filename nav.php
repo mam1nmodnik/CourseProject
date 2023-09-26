@@ -54,9 +54,9 @@
             </div>
         </div>
     </div>
-    <div class="ticker">
+    <!-- <div class="ticker">
         <div class="ticker__wrapper">
         <div class="ticker__item"><img src="img/pngegg.png" alt=""></div>
         </div>
-    </div>
+    </div> -->
 

@@ -13,6 +13,13 @@
   src="https://code.jquery.com/jquery-3.6.4.min.js"
   integrity="sha256-oP6HI9z1XaZNBrJURtCoUT5SUnxFr8s3BzRl+cbzUq8="
   crossorigin="anonymous"></script>
+
+  <link rel="stylesheet" href="liMarquee/liMarquee.css"/>
+    <script type="text/javascript" src="liMarquee/jquery-1.8.3.min.js"></script>
+    <script type="text/javascript"src="liMarquee/jquery.liMarquee.js"></script>
+    </body>
+
+
     <title>Главная</title>
 </head>
 <body>
@@ -164,100 +171,13 @@
             <h3 class="_anim-items _anim-no-hide">Это люди,  которых мы ищем прямо сейчас. И нам нужна ваша<br> помощь, чтобы как можно скорее найти каждого из них.</h3>
         </div>
        
-        <div class="ticker" style="top: 30px;">
-            <div class="ticker__wrapper">
-                <div class="ticker__item"> 
-                    <div class="photo-of-the-missing"> 
-                        <div>
-                            <img src="img/Rectangle 12.png" alt="">
-                        </div>
-                        <div> 
-                            <p><span class="color-requirements">Область/край:</span> Алтайский</p>
-                            <p><span class="color-requirements">Возраст:</span> 23 года</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="ticker__item"> 
-                    <div class="photo-of-the-missing"> 
-                        <div>
-                            <img src="img/Rectangle 12.png" alt="">
-                        </div>
-                        <div> 
-                            <p><span class="color-requirements">Область/край:</span> Алтайский</p>
-                            <p><span class="color-requirements">Возраст:</span> 23 года</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="ticker__item"> 
-                    <div class="photo-of-the-missing"> 
-                        <div>
-                            <img src="img/Rectangle 12.png" alt="">
-                        </div>
-                        <div> 
-                            <p><span class="color-requirements">Область/край:</span> Алтайский</p>
-                            <p><span class="color-requirements">Возраст:</span> 23 года</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="ticker__item"> 
-                    <div class="photo-of-the-missing"> 
-                        <div>
-                            <img src="img/Rectangle 12.png" alt="">
-                        </div>
-                        <div> 
-                            <p><span class="color-requirements">Область/край:</span> Алтайский</p>
-                            <p><span class="color-requirements">Возраст:</span> 23 года</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="ticker__item"> 
-                    <div class="photo-of-the-missing"> 
-                        <div>
-                            <img src="img/Rectangle 12.png" alt="">
-                        </div>
-                        <div> 
-                            <p><span class="color-requirements">Область/край:</span> Алтайский</p>
-                            <p><span class="color-requirements">Возраст:</span> 23 года</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="ticker__item"> 
-                    <div class="photo-of-the-missing"> 
-                        <div>
-                            <img src="img/Rectangle 12.png" alt="">
-                        </div>
-                        <div> 
-                            <p><span class="color-requirements">Область/край:</span> Алтайский</p>
-                            <p><span class="color-requirements">Возраст:</span> 23 года</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="ticker__item"> 
-                    <div class="photo-of-the-missing"> 
-                        <div>
-                            <img src="img/Rectangle 12.png" alt="">
-                        </div>
-                        <div> 
-                            <p><span class="color-requirements">Область/край:</span> Алтайский</p>
-                            <p><span class="color-requirements">Возраст:</span> 23 года</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="ticker__item"> 
-                    <div class="photo-of-the-missing"> 
-                        <div>
-                            <img src="img/Rectangle 12.png" alt="">
-                        </div>
-                        <div> 
-                            <p><span class="color-requirements">Область/край:</span> Алтайский</p>
-                            <p><span class="color-requirements">Возраст:</span> 23 года</p>
-                        </div>
-                    </div>
-                </div>
-                
-            </div>
-        </div>
+        
     </div>    
+
+
+                <div class="str str_wrap"  id="ticker__content"></div>
+
+
     <div class="conteiner-index" id="input-area">
        
             <div class="main-container-statistic">
@@ -305,13 +225,22 @@
                                 <input type="file" name="photo" id="photo" class="inputs">
                             </div>
                             <div>
-                                <button class="button_form" id="newMailEntry-button"><h4>Отправить</h4></button>
+                                <button class="button_form" id="newMailEntry-button"><h4 class="hide-send">Отправить</h4><div class="loader hide"></div></button>
                             </div>
+
+
                         </form>
+                        
+                        <div class="pincode-container hide">
+
+                        </div>
                     </div>
                 </div>
             
         </div>
+
+
+
     </div>
     
     <?php 
@@ -319,11 +248,9 @@
     ?>
     
     
-   
-    
-<script type="text/javascript" src="js/js.js"></script>
+    <script type="text/javascript" src="js/js.js"></script>
+<script type="text/javascript" src="js/liMarquee.js"></script>   
+
 <script src="js/countUp.min.js"></script> <!-- Подключаем плагин countUp -->
 <script src="js/main.js"></script> <!-- Подключаем основной javascript файл -->
-
-</body>
 </html>

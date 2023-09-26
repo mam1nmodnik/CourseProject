@@ -455,7 +455,7 @@ header{
     background-color:rgba(250, 118, 44, 1);
 }
 
-.ticker {
+/* .ticker {
     position: relative;
     overflow: hidden;
     top: -110px;
@@ -488,7 +488,80 @@ header{
     width: 300px;
     height: 300px;
 }
+ */
 
+ #ticker__wrapper {
+    
+    top: 0;
+    left: 0;
+    width: 100%;
+    
+    overflow: hidden;
+  }
+  
+  .ticker__container {
+    white-space: nowrap;
+    animation: ticker-scroll 20s linear infinite;
+  }
+  
+  @keyframes ticker-scroll {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(-100%);
+    }
+  }
+
+.ticker__content{
+    display: flex;
+}
+
+.marquee {
+    white-space: nowrap; /* Запрещаем перенос текста */
+    overflow: hidden; /* Скрываем все, что не поместится в блок */
+  }
+  
+
+.liza-alert {
+    background-color: #f4f4f4;
+    color: #333;
+    height: 40px;
+    font-size: 16px;
+    line-height: 40px;
+    overflow: hidden;
+}
+
+.ticker-wrap {
+    position: relative;
+    height: 100%;
+}
+
+.ticker {
+    white-space: nowrap;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    overflow: hidden;
+}
+
+.ticker span {
+    display: inline-block;
+    padding-left: 100%;
+    animation: ticker 15s linear infinite;
+}
+
+
+
+
+.str .str_item {
+    font-size:0;
+    line-height:0
+}
+    
+    
 
 
 .list-of-requirements-number{
@@ -646,6 +719,7 @@ header{
 .photo-of-the-missing img{
     width: 303px;
     height: 429px;
+    border-radius: 20px;
 }
 .photo-of-the-missing p{
     font-family: 'Montserrat', sans-serif;
@@ -699,6 +773,7 @@ header{
 .input-area form{
     display: flex;
     flex-direction: column;
+    align-items: center;
 }
 .input-area_input{
     display: block;
@@ -982,4 +1057,100 @@ footer{
     margin: 0 auto;
     position: relative;
     top: 100px;
+}
+
+
+.news{
+    width: 160px
+}
+.news-scroll a{
+    text-decoration: none
+}
+.dot{
+    height: 6px;
+    width: 6px;
+    margin-left: 3px;
+    margin-right: 3px;
+    margin-top: 2px !important;
+    background-color: rgb(207,23,23);
+    border-radius: 50%;
+    /* display: inline-block */
+}
+
+
+
+  .hide {
+    display: none;
+  }
+  .loader {
+    width: 64px;
+    height: 64px;
+    border-radius: 50%;
+    position: relative;
+    top: -20px;
+    left: 130px;
+    background: url('../img/1484.png') ;
+  }
+
+ 
+.pincode input[type="number"] {
+	display: inline-block;
+	width: 100px;
+	height: 40px;
+	line-height: 50px;
+	text-align: center;
+	border: 2px solid #5a5a5a;
+	color: #000;
+	padding: 16px 0px;
+	margin: 0 10px;
+	font-size: 30px;
+	font-weight: 700;
+	outline: none;
+	background-color: #fff;
+	-moz-appearance: textfield;
+	-webkit-appearance: textfield;
+	appearance: textfield;
+	box-shadow: 4px 4px 20px 0px rgba(34, 60, 80, 0.2);
+    border-radius: 0.5em;
+}
+.pincode input[type="number"]::-webkit-outer-spin-button,
+.pincode input[type="number"]::-webkit-inner-spin-button {
+	display: none;
+}
+ 
+.pincode input[type="number"]:focus {
+	border: 2px solid #1dd216;
+}
+.pincode-container{
+    text-align: center;
+    position: absolute;
+	
+}
+
+.pincode-container button{
+    padding: 15px 26px;
+    gap: 8px;
+    width: 150px;
+    height: 55px;
+    background: #000000c4;
+    box-shadow: 0px 2px 4px rgba(136, 144, 194, 0.2), 0px 5px 15px rgba(37, 44, 97, 0.15);
+    border-radius: 18px 18px;
+    border: none;
+    margin-top: 15px;
+    cursor: pointer;
+    color: white;
+}
+.pincode{
+    position: relative;
+    top: -115px;
+    left: -55px;
+    padding: 20px 0;
+    background-color: #aaaaaa;
+    border-radius: 0.5em;
+    box-shadow: 4px 4px 20px 0px rgba(34, 60, 80, 0.2);
+}
+
+.pincode-container button:hover{
+    background: #d3d3d3;
+    color: black;
 }
